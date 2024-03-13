@@ -38,11 +38,23 @@
         <br><h1 style="color: azure;" id="metin">Benimle Bir Kahveye Ne Derin ? </h1>
         <form>
             <button id="yesButton" type="button" style="background-color: #4CAF50;" onclick="myFunction()">Evet</button>
-            <button class="randomButtom" id="randomButtom" type="button" style="background-color: #f44336;">Hayır</button>
+            <button class="randomButtom" id="randomButtom" type="button" style="background-color: #f44336;" onclick="degistir()">Hayır</button>
         </form>
 
     </div>
     <script>
+
+        function degistir(){
+            var maxX = window.innerWidth - this.offsetWidth;
+            var maxY = window.innerHeight - this.offsetHeight;
+            var x = Math.random() * 300;
+            var y = Math.random() * 300;
+            if (x < 0 ) x = 0;
+            if (y < 0 ) y = 0;
+            this.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+
+        }
+        
         document.getElementById("randomButtom").onmouseover = function() {
             var maxX = window.innerWidth - this.offsetWidth;
             var maxY = window.innerHeight - this.offsetHeight;
