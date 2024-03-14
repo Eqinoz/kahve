@@ -6,8 +6,8 @@
     <title>Document</title>
     <style>
         .photo{
-            width: 25%;
-            height: 25%;
+            width: 30%;
+            height: 30%;
             display: flex;
             justify-content: center;
             
@@ -27,22 +27,42 @@
             
             
         }
+        .randomButton{
+            transform: translate(0.3s ease);
+        }
+        .metin{
+            width: 25%;
+            height: 25%;
+            display: absolute;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .gif-body{
+            background-image:url("https://media0.giphy.com/media/pz7I61XqoIvhdEhCKQ/giphy.gif") ;
+            background-size: 90px 90px;
+            background-repeat:repeat;
+        }
         
     </style>
 </head>
-<body style="background: black;">
+<body>
     <div class="dsds">
         <div class="photo">
             <img id="png" src="https://resmim.net/cdn/2024/03/13/ffoWXi.jpg">
         </div>
-        <br><h1 style="color: azure;" id="metin">Benimle Bir Kahveye Ne Derin ? </h1>
+        <div class="metin">
+            <br><h1 style="color: black;" id="metin">Benimle Bir Kahveye Ne Dersin ? </h1>
         <form>
             <button id="yesButton" type="button" style="background-color: #4CAF50;" onclick="myFunction()">Evet</button>
             <button class="randomButtom" id="randomButtom" type="button" style="background-color: #f44336;" onclick="degistir()">Hayır</button>
         </form>
+    </div>
+        
 
     </div>
     <script>
+        var i = 0;
 
         function degistir(){
             var maxX = window.innerWidth - this.offsetWidth;
@@ -56,6 +76,8 @@
         }
         
         document.getElementById("randomButtom").onmouseover = function() {
+            i++;
+            
             var maxX = window.innerWidth - this.offsetWidth;
             var maxY = window.innerHeight - this.offsetHeight;
             var x = Math.random() * 300;
@@ -63,16 +85,29 @@
             if (x < 0 ) x = 0;
             if (y < 0 ) y = 0;
             this.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+            if(i == 10){
+                document.getElementById("metin").innerText ="Yeterli sayıda deneme yaptınız. Lütfen bu sizi seven insanı daha fazla üzmeyerek evet butonuna basınız.";
+                
+            }
+            else if(i ==15){
+                document.getElementById("metin").innerText = " Eğer Biraz Daha Üzerseniz Sadece Sizin İçin Atan Kalbi Kıracaksınız.";
+            }
+            else if(i==16){
+                document.getElementById("metin").innerText ="Kırıldı. Onarmak için eveet butonuna basınız. :))"
+                document.getElementById("png").src = "https://resmim.net/cdn/2024/03/14/ff5ABI.jpg";
+                document.getElementById("randomButtom").style.display = "none";
+            }
 
         }
         function myFunction(){
             //alert("Evet dediğin için teşekkür ederim. Beni tanıdığın için çok şanslısın.");
-           document.getElementById("metin").innerText = "Kaççooovv ";
-           document.getElementById("png").src = "https://resmim.net/cdn/2024/03/13/ffomyC.jpg";
+           document.getElementById("metin").innerText = "Kaçççooovv ";
+           document.getElementById("png").src = "https://resmim.net/cdn/2024/03/14/ffRKYD.jpg";
            document.getElementById("randomButtom").style.display = "none";
            document.getElementById("yesButton").style.display = "none";
-           document.body.style.backgroundColor = "pink";
+           document.body.classList.add("gif-body");
            document.div.style.backgroundColor = "pink";
+           
         }
     </script>
     
