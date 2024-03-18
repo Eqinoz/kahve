@@ -52,7 +52,7 @@
             <img id="png" src="https://resmim.net/cdn/2024/03/13/ffoWXi.jpg">
         </div>
         <div class="metin">
-            <br><h1 style="color: black;" id="metin">Benimle Bir Kahveye Ne Dersin ? </h1>
+            <br><h1 style="color: black;" id="metin">Birlikte Bir Kahveye İçmeye Ne Dersin ? </h1>
         <form>
             <button id="yesButton" type="button" style="background-color: #4CAF50;" onclick="myFunction()">Evet</button>
             <button class="randomButtom" id="randomButtom" type="button" style="background-color: #f44336;" onclick="degistir()">Hayır</button>
@@ -90,7 +90,7 @@
                 
             }
             else if(i ==15){
-                document.getElementById("metin").innerText = " Eğer Biraz Daha Üzerseniz Sadece Sizin İçin Atan Kalbi Kıracaksınız.";
+                document.getElementById("metin").innerText = " Eğer Biraz Daha Üzerseniz Kalbimi Kıracaksınız.";
             }
             else if(i==16){
                 document.getElementById("metin").innerText ="Kırıldı. Onarmak için eveet butonuna basınız. ;))"
@@ -105,10 +105,16 @@
            document.getElementById("png").src = "https://resmim.net/cdn/2024/03/14/ffRKYD.jpg";
            document.getElementById("randomButtom").style.display = "none";
            document.getElementById("yesButton").style.display = "none";
-          // document.body.classList.add("gif-body");
+           setTimeout(function () {
+        window.location.href = "https://wa.me/+905443715259/?text=Evet%20Kahve%20Teklifini%20Kabul%20Ediyorum";
+    }, 5000);
+          
            document.div.style.backgroundColor = "pink";
            
+           
         }
+       
+        
     </script>
     
 </body>
