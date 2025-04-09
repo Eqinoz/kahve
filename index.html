@@ -41,6 +41,11 @@
       border: 1px solid #ccc;
       width: 250px;
     }
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
   </style>
 </head>
 <body>
@@ -50,14 +55,19 @@
   <button id="noBtn">Hayır 🙈</button>
 
   <div id="inputContainer">
-    <p>Çok tatlısın! Instagram adresini yaz lütfen 💕</p>
-    <input type="text" placeholder="@kullaniciadi">
+    <p>Harika! İnstagram Kullanıcı Adını yazar mısın? 😇</p>
+    <input type="text" id="nameInput" placeholder="@kullanıcıadı">
+    <br>
+    <button onclick="showMessage()">Gönder</button>
   </div>
+
+  <p id="message"></p>
 
   <script>
     const noBtn = document.getElementById('noBtn');
     const yesBtn = document.getElementById('yesBtn');
     const inputContainer = document.getElementById('inputContainer');
+    const message = document.getElementById('message');
 
     noBtn.addEventListener('mouseover', () => {
       const x = Math.random() * (window.innerWidth - 100);
@@ -69,6 +79,15 @@
     yesBtn.addEventListener('click', () => {
       inputContainer.style.display = 'block';
     });
+
+    function showMessage() {
+      const name = document.getElementById('nameInput').value.trim();
+      if (!name) {
+        alert("İsmini yazmadan gönderemezsin 🥺");
+        return;
+      }
+      message.innerHTML = `Teşekkürler ${name}! 💖<br>Şimdi Instagram kullanıcı adını bana <strong>mesaj olarak</strong> atar mısın?(tam otomatik yapmak için sunucuya yüklemeye maddi drumum yetmedi.🥺) 💌`;
+    }
   </script>
 
 </body>
